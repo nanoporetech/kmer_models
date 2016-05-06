@@ -1,2 +1,2 @@
 # kmer_models
-HMM models for development use
+HMM emission density parameterisations for development use.
