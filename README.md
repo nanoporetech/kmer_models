@@ -1,7 +1,7 @@
 # kmer_models
 This repository contains predictive kmer models for development use. Each folder contains a set of template and complement models and is named in the format
 
-`<pore>_<bias_voltage>_<speed>_<kmer_length>`
+`<pore>_<bias_voltage>_<speed>_<kmer_length>[_RNA]`
 
 e.g. `r9.2_180mv_250bps_6mer`
 
@@ -18,3 +18,6 @@ Each model is a tab-delimited text file containing seven columns. These models a
    (so `sd_stdv == sqrt(sd_mean ^ 3 / ig_lambda`). See [Wikipedia](https://en.wikipedia.org/wiki/Inverse_Gaussian_distribution) for more info.
 7. **weight** Used internally for model training purposes.
 
+## RNA kmer models
+
+Note that RNA kmer models currently have uracil labelled as thymine, so that it looks like DNA. This is in keeping with the present output format of the event table in basecalled fast5 files, though it may change in future.
