@@ -1,3 +1,11 @@
+# This project is deprecated
+kmer models are no longer supported by Oxford Nanopore Technologies, and we do not plan on updating this repository any further. Some of our other projects may be helpful:
+
+* Taiyaki, to [train models from nothing](https://github.com/nanoporetech/taiyaki#abinitio-training).
+* Taiyaki or [Bonito](https://github.com/nanoporetech/bonito#training-your-own-model), to train new basecall models from existing basecalled data.
+
+Or visit the [Oxford Nanopore Community](https://community.nanoporetech.com/) for general questions.
+
 # kmer_models
 This repository contains predictive kmer models for development use. Each folder contains a set of template and complement models and is named in the format
 
