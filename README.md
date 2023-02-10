@@ -1,21 +1,29 @@
-# This project is deprecated
-kmer models are no longer supported by Oxford Nanopore Technologies, and we do not plan on updating this repository any further. Some of our other projects may be helpful:
+# K-mer Models
 
-* Taiyaki, to [train models from nothing](https://github.com/nanoporetech/taiyaki#abinitio-training).
-* Taiyaki or [Bonito](https://github.com/nanoporetech/bonito#training-your-own-model), to train new basecall models from existing basecalled data.
+K-mer level tables are provided for development use.
+These tables may be used with Remora for optimal modified base detection performance.
 
-Or visit the [Oxford Nanopore Community](https://community.nanoporetech.com/) for general questions.
+As opposed to legacy k-mer models, k-mer level tables contain only the expected level for each k-mer.
+The expected level table is in standard units (approximately 0 mean and 1 standard deviation spread).
 
-# kmer_models
-This repository contains predictive kmer models for development use. Each folder contains a set of template and complement models and is named in the format
+K-mer tables will be stored in directories cooresponding to the sequencing condition.
+
+# Legacy models
+
+Legacy models have different format to newer level models as specfied here
+
+This repository contains predictive kmer models for development use.
+Each folder contains a set of template and complement models and is named in the format
 
 `<pore>_<bias_voltage>_<speed>_<kmer_length>[_RNA]`
 
 e.g. `r9.2_180mv_250bps_6mer`
 
-There will usually be one template model and two complement models. The two complement models correspond to "nonuplifted" and "uplifted" populations ("pop1" and "pop2" respectively).
+There will usually be one template model and two complement models.
+The two complement models correspond to "nonuplifted" and "uplifted" populations ("pop1" and "pop2" respectively).
 
-Each model is a tab-delimited text file containing seven columns. These models assume that the current levels for each kmer can be approximated using a Gaussian distribution and the corresponding signal noise can be approximated using an inverse Gaussian distribution.
+Each model is a tab-delimited text file containing seven columns.
+These models assume that the current levels for each kmer can be approximated using a Gaussian distribution and the corresponding signal noise can be approximated using an inverse Gaussian distribution.
 
 1. **kmer** The kmer being modelled.
 2. **level_mean** The mean of a Gaussian distribution representing the current observed for this kmer.
@@ -28,4 +36,5 @@ Each model is a tab-delimited text file containing seven columns. These models a
 
 ## RNA kmer models
 
-Note that RNA kmer models currently have uracil labelled as thymine, so that it looks like DNA. This is in keeping with the present output format of the event table in basecalled fast5 files, though it may change in future.
+Note that RNA kmer models currently have uracil labelled as thymine, so that it looks like DNA.
+This is in keeping with the present output format of the event table in basecalled fast5 files, though it may change in future.
